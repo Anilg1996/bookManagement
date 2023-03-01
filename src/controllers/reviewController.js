@@ -31,7 +31,7 @@ let creatReview = async function (req, res) {
     if (!Validation.IsValidDate(reviewedAt)) return res.status(400).send({ status: false, message: "please inter valid reviewedAt in format: YYYY-MM-DD" })
     data.bookId = bookId;
 
-    console.log(data)
+    //console.log(data)
 
     let reviewBook = await reviewModel.create(data)
     let updateBook = await bookModel.findOneAndUpdate({ _id: bookId }, { $inc: { reviews: 1 } }, { new: true })

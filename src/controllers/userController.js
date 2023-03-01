@@ -72,14 +72,11 @@ const login = async function (req, res) {
             }
             else {
                 return res.status(400).send({ status: false, msg: "invalid credentials" })
-            }
-        }
-    }
+            }}}
     catch (err) {
         return res.status(500).send({ status: false, message: err.message })
 
-    }
-}
+    }}
 
 
 module.exports.login = login
